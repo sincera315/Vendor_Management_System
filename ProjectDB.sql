@@ -111,11 +111,12 @@ CREATE TABLE PerformanceFeedback (
 
 
 
-
+ALTER TABLE Vendor MODIFY COLUMN ContactInfo BigInt DEFAULT NULL;
+-- Drop Procedure RegisterVendor;
 DELIMITER //
 CREATE PROCEDURE RegisterVendor(
     IN vendorName VARCHAR(100),
-    IN ContactInfo VARCHAR(15),
+    IN ContactInfo BIGINT,
     IN EmailAdress VARCHAR(100),
     IN complianceCertifications TEXT,
     In PerformanceRating DECIMAL(3, 2)
